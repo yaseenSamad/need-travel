@@ -1,0 +1,22 @@
+.navbar {
+    background: var(--primary-color);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      li {
+        a {
+          text-decoration: none;
+          color: white;
+          font-weight: 500;
+          &:hover {
+            color: var(--secondary-color);
+          }
+        }
+      }
+    }
+  }
+  
