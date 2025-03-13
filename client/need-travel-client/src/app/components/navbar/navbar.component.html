@@ -1,8 +1,40 @@
 <nav class="navbar">
-    <ul>
-      <li><a routerLink="/">Home</a></li>
-      <li><a routerLink="/about">About</a></li>
-      <li><a routerLink="/services">Services</a></li>
-      <li><a routerLink="/contact">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- Logo -->
+  <img src="need-tt-transparent.png" alt="Logo" class="logo">
+  
+  <!-- Menu Button (Visible on small screens) -->
+  <button class="menu-btn" (click)="toggleSidebar()">
+    <span class="material-icons">
+      menu
+      </span>
+  </button>
+
+  <!-- Navbar Items -->
+  <ul class="nav-links">
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/about">About</a></li>
+    <li><a routerLink="/services">Services</a></li>
+    <li><a routerLink="/contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Sidebar (Visible when toggled) -->
+<div *ngIf="sidebarOpen" class="overlay" (click)="toggleSidebar()"></div>
+<aside class="sidebar" [ngClass]="{'open': sidebarOpen}">
+
+  <div class=" p-3">
+    <img src="need-tt-transparent.png" alt="Logo" class="logo">
+  </div>
+
+  <button class="close-btn" (click)="toggleSidebar()">
+    <span class="material-icons">
+      close
+      </span>
+  </button>
+  <ul class="sidebar-links">
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/about">About</a></li>
+    <li><a routerLink="/services">Services</a></li>
+    <li><a routerLink="/contact">Contact</a></li>
+  </ul>
+</aside>

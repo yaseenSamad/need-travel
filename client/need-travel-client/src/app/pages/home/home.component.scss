@@ -1,0 +1,34 @@
+// .carousel-item {
+//     text-align: center;
+//     width: 100%;
+//   }
+  
+//   .carousel-image {
+//     width: 100%;
+//     max-width: 500px;
+//     height: auto;
+//     object-fit: cover;
+//     border-radius: 50%;
+//     overflow: hidden;
+//   }
+.product-image{
+    width: 100%;
+margin: auto;
+    height: 600px;
+    object-fit: cover;
+    // border-radius: 10px;
+    object-position: 10% 66%;
+    opacity: .6;
+}
+.p-carousel-items-container {
+    visibility: hidden;
+}
+.p-carousel-items-container.p-carousel-items-container-ready {
+    visibility: visible;
+}
+
+.p-carousel {
+    overflow: hidden;
+}
+
+  
