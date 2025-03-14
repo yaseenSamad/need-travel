@@ -31,4 +31,47 @@ margin: auto;
     overflow: hidden;
 }
 
+//
+
+.form-container{
+    margin: 2em 5em 2em 5em;
+    display: flex;
+    // background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKcv6Rl6Her6hglEEilOdo9BxY_kZlIJHtwA&s);
+    // background-repeat: no-repeat;   /* Prevents repetition */
+    // background-size: cover; 
+    // background-position: center;
+
+    background: rgb(223,240,244);
+    background: linear-gradient(135deg, rgb(223, 240, 244) 0%, rgb(8, 33, 41) 0%, rgb(69, 108, 130) 11%, rgb(67 78 119) 20%, rgb(80 76 122) 34%, rgb(51 63 104) 43%, rgb(49 56 82) 49%, rgb(11, 8, 53) 65%);
+
+//     background: rgb(223,240,244);
+// background: linear-gradient(135deg, rgba(223,240,244,1) 0%, rgba(7,37,47,1) 0%, rgba(69,108,130,1) 11%, rgba(125,139,206,1) 20%, rgba(154,152,175,1) 34%, rgba(91,82,82,1) 49%, rgba(11,8,53,1) 65%);
+    border-radius: 50px;
+    padding: 2em;
+
+}
+.aeroplane-image{
+    object-fit: cover;
+    height: 250px;
+    width: 100%;
+    opacity: .8;
+}
+.wings-block{
+    flex: 1;
+    -webkit-mask-image: url('/need-tt-transparent.png');
+    mask-image: url('/need-tt-transparent.png');
+    // mask-repeat: no-repeat; 
+    
+    -webkit-mask-size: contain;
+    mask-size: contain;
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+    mask-position: center;
+}
+.form-block{
+    flex: 2
+}
   

@@ -82,9 +82,14 @@
   left: -100%;
   width: 50%;
   height: 100%;
-  background: var(--nav-color);
+  
   padding-top: 60px;
   transition: left 0.3s;
+
+  opacity: 1 !important;
+  background: var(--nav-color);
+  position: fixed;
+  z-index: 1000; 
 }
 
 .sidebar.open {
