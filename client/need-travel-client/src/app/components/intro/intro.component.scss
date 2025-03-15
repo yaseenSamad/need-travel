@@ -1,0 +1,49 @@
+.product-image{
+    width: 100%;
+    margin: auto;
+    height: 600px;
+    object-fit: cover;
+    // border-radius: 10px;
+    object-position: 10% 66%;
+    opacity: .6;
+}
+
+.typewriter {
+    font-size: 16px;
+    font-weight: bold;
+    white-space: nowrap;
+    
+    border-right: 2px solid #387447; /* Cursor effect */
+    animation: blink-caret 0.75s step-end infinite;
+  }
+  
+  /* Blinking cursor effect */
+  @keyframes blink-caret {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #e1e1e1;
+    color: #387447;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+
+    overflow: hidden;
+    animation: blink-caret 0.75s step-end infinite;
+  }
+
+  .image-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }

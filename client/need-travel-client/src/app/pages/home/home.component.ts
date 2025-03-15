@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CarouselModule } from 'primeng/carousel';
 import { CommonService } from '../../common-services/common.service';
+import { IntroComponent } from '../../components/intro/intro.component';
+import { ItineraryFormComponent } from '../../components/itinerary-form/itinerary-form.component';
 
 @Component({
   selector: 'app-home',
-  imports: [CarouselModule],
+  imports: [CarouselModule,IntroComponent,ItineraryFormComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent {
+export class HomeComponent{
   carouselItems: any= [];
 
   constructor(private commonService: CommonService){
@@ -32,5 +34,7 @@ export class HomeComponent {
       numScroll: 1
     }
   ];
+
+
 
 }

@@ -1,0 +1,38 @@
+::ng-deep #service {
+    color: black;
+    width: 186px;
+}
+::ng-deep #passengersCount {
+    color: black;
+    background: white;
+}
+.p-inputtext{
+    color: black;
+    background: white;
+}
+.p-textarea{
+    color: black;
+    background: white; 
+    width: 100%;
+}
+.p-select{
+    background: white;
+}
+// .p-inputtext
+
+
+.itinerary-form-container{
+    margin: 2em 5em 2em 5em;
+    display: flex;
+    background: var(--primary-color);
+    padding: 2em;
+    // justify-content: center;
+}
+
+.flight-booking-img{
+    width: 500px;
+}
+
+.travel-form{
+    background: var(--primary-color);
+}
