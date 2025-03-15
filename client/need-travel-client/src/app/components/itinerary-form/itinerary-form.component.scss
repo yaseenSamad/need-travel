@@ -2,6 +2,16 @@
     color: black;
     width: 258px;
 }
+::ng-deep #departure {
+    color: black;
+    background: white;
+    width: 100%;
+}
+::ng-deep #return {
+    color: black;
+    background: white;
+    width: 100%;
+}
 ::ng-deep #passengersCount {
     color: black;
     background: white;
@@ -9,6 +19,9 @@
 }
 ::ng-deep #country-code{
     color: black;
+}
+::ng-deep .p-datepicker{
+    width: 100%;
 }
 .p-inputtext{
     color: black;
@@ -60,7 +73,7 @@
 }
 
 .flight-booking-img{
-    width: 500px;
+    width: 550px;
 }
 
 .travel-form{

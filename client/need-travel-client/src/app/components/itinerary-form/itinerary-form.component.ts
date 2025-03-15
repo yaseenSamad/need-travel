@@ -14,6 +14,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { CommonService } from '../../common-services/common.service';
+import { DatePickerModule } from 'primeng/datepicker';
 
 @Component({
   selector: 'app-itinerary-form',
@@ -32,6 +33,7 @@ import { CommonService } from '../../common-services/common.service';
     ButtonModule,
     InputGroupModule,
     InputGroupAddonModule,
+    DatePickerModule,
   ],
   templateUrl: './itinerary-form.component.html',
   styleUrl: './itinerary-form.component.scss'
@@ -53,7 +55,9 @@ export class ItineraryFormComponent implements OnInit{
 
   countryCodes = [
     {countryCode: 'AE', value: '+971', flag: 'https://flagcdn.com/w320/ae.png'}
-];
+  ];
+
+  minDate = new Date();
 
 
   travelFormSubmitted = false;
@@ -75,6 +79,8 @@ export class ItineraryFormComponent implements OnInit{
       service: [null, Validators.required],
       from: ['', Validators.required],
       to: ['', Validators.required],
+      departure: ['',Validators.required],
+      return: ['',Validators.required],
       remarks: [''],
       countryCode: [ 
         {countryCode: 'AE', value: '+971', flag: 'https://flagcdn.com/w320/ae.png'} , Validators.required],
