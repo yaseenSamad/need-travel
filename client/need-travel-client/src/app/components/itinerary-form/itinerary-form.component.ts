@@ -11,6 +11,9 @@ import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { TextareaModule } from 'primeng/textarea';
 import { ButtonModule } from 'primeng/button';
+import { InputGroupModule } from 'primeng/inputgroup';
+import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
+import { CommonService } from '../../common-services/common.service';
 
 @Component({
   selector: 'app-itinerary-form',
@@ -26,7 +29,9 @@ import { ButtonModule } from 'primeng/button';
     IconFieldModule,
     InputIconModule,
     TextareaModule,
-    ButtonModule
+    ButtonModule,
+    InputGroupModule,
+    InputGroupAddonModule,
   ],
   templateUrl: './itinerary-form.component.html',
   styleUrl: './itinerary-form.component.scss'
@@ -45,22 +50,48 @@ export class ItineraryFormComponent implements OnInit{
     { label: 'Entry Tickets', value: 'entry-tickets' },
     { label: 'Packages', value: 'packages' }
   ];
+
+  countryCodes = [
+    {countryCode: 'AE', value: '+971', flag: 'https://flagcdn.com/w320/ae.png'}
+];
+
+
   travelFormSubmitted = false;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,private commonService: CommonService) {
+    this.loadCountryCode()
+    
+  }
+
+
 
   ngOnInit() {
     this.travelForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      contactNo: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      contactNo: ['', [Validators.required, Validators.pattern('^[0-9]{7,15}$')]],
       numberOfPassengers: [1, [Validators.required, Validators.min(1)]],
       service: [null, Validators.required],
       from: ['', Validators.required],
       to: ['', Validators.required],
-      remarks: ['']
+      remarks: [''],
+      countryCode: [ 
+        {countryCode: 'AE', value: '+971', flag: 'https://flagcdn.com/w320/ae.png'} , Validators.required],
     });
+  }
+
+  loadCountryCode(){
+    try {
+      const countryCodes =  this.commonService.fetchCountryCodes().then((value)=>{
+        console.log(value);
+        this.countryCodes = value
+      }).catch((err)=>{
+        console.error('Error loading country codes:', err);
+      })
+    } catch (error) {
+      console.error('Error loading country codes:', error);
+    }
   }
 
   onSubmit(){

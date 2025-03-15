@@ -1,26 +1,56 @@
 ::ng-deep #service {
     color: black;
-    width: 186px;
+    width: 258px;
 }
 ::ng-deep #passengersCount {
     color: black;
     background: white;
+    width: 100%;
+}
+::ng-deep #country-code{
+    color: black;
 }
 .p-inputtext{
     color: black;
     background: white;
+    width: 100%;
+}
+.p-inputnumber{
+    width: 100%;
+}
+.p-inputgroup{
+    width: 300px;
+}
+.p-inputgroup .p-inputwrapper{
+    width: 50%;
+}
+.p-inputgroup .p-floatlabel{
+    min-width: auto;
+}
+.p-inputgroup .p-select-label{
+    color: black;
 }
 .p-textarea{
     color: black;
     background: white; 
     width: 100%;
 }
+.p-floatlabel{
+    min-width: 300px;
+}
 .p-select{
     background: white;
 }
-// .p-inputtext
+.p-select-label{
+    color: black;
+}
 
 
+
+.flag-img{
+    height: 10px;
+    width: 20px;
+}
 .itinerary-form-container{
     margin: 2em 5em 2em 5em;
     display: flex;
