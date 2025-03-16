@@ -24,21 +24,32 @@
     }
   }
 
-.overlay-text {
+  .search-container{
     position: absolute;
-    top: 50%;
+    top: 90%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #e1e1e1;
-    color: #387447;
-    padding: 10px 20px;
-    border-radius: 20px;
+    background-color: var(--primary-color);
+    color: black;
+    padding: 1px 20px;
+    // border-radius: 20px;
     font-size: 18px;
     font-weight: bold;
     text-align: center;
     white-space: nowrap;
 
     overflow: hidden;
+
+    display: flex;
+    align-items: end;
+    border: 2px solid black;
+    border-radius: 40px;
+    gap: 10px;
+    min-width: 300px;
+  }
+
+.overlay-text {
+
     animation: blink-caret 0.75s step-end infinite;
   }
 

@@ -29,7 +29,6 @@
     margin: 2em 5em 2em 5em;
     display: flex;
     gap: 2rem;
-
     background: rgb(223,240,244);
     background: linear-gradient(135deg, rgb(223, 240, 244) 0%, rgb(8, 33, 41) 0%, rgb(69, 108, 130) 11%, rgb(67 78 119) 20%, rgb(80 76 122) 34%, rgb(51 63 104) 43%, rgb(49 56 82) 49%, rgb(11, 8, 53) 65%);
 
@@ -47,6 +46,7 @@
 }
 .wings-block{
     flex: 1;
+    min-width: 150px;
     -webkit-mask-image: url('/need-tt-transparent.png');
     mask-image: url('/need-tt-transparent.png');
     // mask-repeat: no-repeat; 
@@ -71,4 +71,18 @@
 
 
   
-  
+@media (max-width: 650px) {
+    .wings-block{
+        flex: auto;
+    }
+    .form-container{
+        flex-wrap: wrap-reverse;
+        margin: 2em;
+    }
+    .form-block{
+        flex: auto;
+        border-right: none;
+        border-top: 1px solid white;
+    }
+    
+}
