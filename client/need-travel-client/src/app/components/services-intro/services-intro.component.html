@@ -1,0 +1,12 @@
+
+<div class="services-parent-container">
+    <div class="p-2 subheader">
+        <h2>Our Services</h2>
+    </div>
+    <div class="services-container">
+        <div *ngFor="let service of services" class="service-card">
+            <span class="material-icons service-icon">{{service.icon}}</span>
+            <p class="service-label">{{ service.label }}</p>
+        </div>
+    </div>
+</div>

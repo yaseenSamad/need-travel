@@ -1,0 +1,29 @@
+<div class="destination-list-container">
+
+    <div class="p-2 subheader">
+        <h2>Our Destinations</h2>
+    </div>
+
+    <!-- <div *ngFor="let destination of destionationList; trackBy: trackByDestinationId"></div> -->
+    <p-carousel [value]="destionationList" [numVisible]="3" [numScroll]="1"   [showNavigators]="false" [circular]="true" [responsiveOptions]="responsiveOptions">
+        <ng-template let-destination #item>
+            <p-card >
+                <ng-template #header>
+                    <img alt="Card" class="destination-image" [src]="destination.image" />
+                </ng-template>
+                <ng-template #title> {{destination.title}} </ng-template>
+                <ng-template #subtitle> {{destination.highlightText}} </ng-template>
+                <p>
+                    {{destination.description}}
+                </p>
+                <ng-template #footer>
+                    <div class="d-flex justify-content-center mt-1">
+                        <p-button label="Read more" class="w-full" styleClass="w-full" />
+                    </div>
+                </ng-template>
+            </p-card>
+        </ng-template>
+    </p-carousel>
+</div>
+
+

@@ -1,0 +1,47 @@
+.services-parent-container{
+    margin: 2em 5em 2em 5em;
+}
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    padding-block: 1em;
+}
+
+.service-card {
+    width: 250px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+    font-size: 100px;
+    width: 100px;
+    height: 100px;
+    color: var(--primary-color);
+}
+
+.service-label {
+    margin-top: 10px;
+    font-weight: 500;
+    text-align: center;
+}
+
+@media (max-width: 650px) {
+    .services-parent-container{
+        margin: 2em;
+    }
+}
