@@ -5,9 +5,10 @@ import { IntroComponent } from '../../components/intro/intro.component';
 import { ItineraryFormComponent } from '../../components/itinerary-form/itinerary-form.component';
 import {DestinationListComponent} from '../../components/destination-list/destination-list.component'
 import { ServicesIntroComponent } from '../../components/services-intro/services-intro.component';
+import { FooterComponent } from '../../components/footer/footer.component';
 @Component({
   selector: 'app-home',
-  imports: [CarouselModule,IntroComponent,ItineraryFormComponent,DestinationListComponent,ServicesIntroComponent],
+  imports: [CarouselModule,IntroComponent,ItineraryFormComponent,DestinationListComponent,ServicesIntroComponent,FooterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
