@@ -57,9 +57,6 @@
 .p-select-label{
     color: black;
 }
-
-
-
 .flag-img{
     height: 10px;
     width: 20px;
@@ -69,6 +66,8 @@
     display: flex;
     background: var(--primary-color);
     padding: 2em;
+    flex-wrap: wrap;
+    justify-content: center;
     // justify-content: center;
 }
 
@@ -78,4 +77,28 @@
 
 .travel-form{
     background: var(--primary-color);
+}
+
+@media (max-width: 900px) {
+    .p-floatlabel{
+        width: 100%;
+    }
+    .p-select{
+        width: 100%;
+    }
+    .p-inputgroup{
+        width: 100%;
+    }
+    .flight-booking-img{
+        min-width: 250px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px) {
+    .itinerary-form-container{
+        padding-inline: 5px;
+        margin: 2em;
+    }
+    
 }

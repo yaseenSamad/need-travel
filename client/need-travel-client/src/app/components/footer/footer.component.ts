@@ -9,6 +9,10 @@ import { Component } from '@angular/core';
 export class FooterComponent {
 
   navigateToSocialMediaPlatfor(type: 'facebook' | 'instagram'){
-    
+    if(type == 'facebook'){
+      window.location.href = 'https://www.facebook.com/explorewithneed'
+    }else if(type == 'instagram'){
+      window.location.href = 'https://www.instagram.com/explorewithneed/'
+    }
   }
 }
