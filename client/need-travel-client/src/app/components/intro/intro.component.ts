@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-intro',
@@ -7,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './intro.component.scss'
 })
 export class IntroComponent implements OnInit {
-  fullText: string = 'Welcome to Need Travel!'; // Text to display
-  displayedText: string = ''; // Text that appears dynamically
-  typingSpeed: number = 300; // Typing speed in milliseconds
-  deletingSpeed: number = 50; // Speed of backspacing
-  delayBeforeDeleting: number = 1000; // Delay before backspacing
-  delayBeforeTyping: number = 100; // Delay before retyping
+  @Input() fullText: string = 'Welcome to Need Travel!';
+  displayedText: string = '';
+  typingSpeed: number = 300;
+  deletingSpeed: number = 50;
+  delayBeforeDeleting: number = 1000;
+  delayBeforeTyping: number = 100;
 
   ngOnInit(): void {
       this.startTypingEffect()

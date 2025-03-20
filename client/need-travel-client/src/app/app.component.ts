@@ -2,13 +2,19 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { CommonModule } from '@angular/common';
+import { NgxSpinnerComponent } from 'ngx-spinner';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,ButtonModule,NavbarComponent],
+  imports: [RouterOutlet,ButtonModule,NavbarComponent,CommonModule,NgxSpinnerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
   title = 'need-travel-client';
+
+  constructor(){}
+
 }

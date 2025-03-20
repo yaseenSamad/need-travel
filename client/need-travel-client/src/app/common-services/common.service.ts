@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommonService {
 
-  constructor() { }
+  constructor(private spinner: NgxSpinnerService) { }
 
   carouselItems = [
     { id: 1, image: 'assets/windmill-on-famland.jpg', name: 'windmill-on-famland' },
@@ -30,6 +31,14 @@ export class CommonService {
     console.error('Error fetching country codes:', error)
     return []
   });
+  }
+
+  showLoader(){
+    this.spinner.show();
+  }
+
+  hideLoader(){
+    this.spinner.hide();
   }
 
 }
