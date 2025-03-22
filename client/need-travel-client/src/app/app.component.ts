@@ -17,4 +17,8 @@ export class AppComponent {
 
   constructor(){}
 
+  scrollToTop(){
+    document.body.scrollTop = 0;
+  }
+
 }

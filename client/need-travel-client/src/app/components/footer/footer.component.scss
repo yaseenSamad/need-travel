@@ -63,3 +63,14 @@ a{
         gap: 2rem;
     }
 }
+
+@media (max-width: 350px) {
+    .footer-logo{
+        max-width: 240px;
+        padding: .5rem;
+    }
+    .footer-details-block{
+        padding: .5rem;
+        gap: 2rem;
+    }
+}

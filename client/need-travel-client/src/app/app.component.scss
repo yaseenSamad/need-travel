@@ -1,0 +1,30 @@
+.test{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    height: 40%;
+    z-index: 100;
+    align-items: center;
+    img{
+        width: 40px;
+    }
+    a{
+        height: fit-content;
+    }
+    span{
+        background: grey;
+        border-radius: 20px;
+        padding: 2px;
+        text-align: center;
+    }
+    button{
+        all: unset;
+        cursor: pointer;
+        height: 28px;
+    }
+}
+
+
