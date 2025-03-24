@@ -1,0 +1,27 @@
+.destination-section {
+    width: 100%;
+    padding: 0;
+    // background-color: green;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-conatiner{
+    margin: 4em 5em 4em 5em; 
+}
+
+.destination-section-title{
+    background-color: var(--primary-color);
+    font-size: 20px;
+    font-weight: bold;
+    // color: white;
+    padding: 20px;
+    border-bottom: 1px solid black;
+}
+
+.destination-section-content{
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}

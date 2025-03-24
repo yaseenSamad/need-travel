@@ -21,4 +21,8 @@ export class AppComponent {
     document.body.scrollTop = 0;
   }
 
+  scrollToDown(){
+    document.body.scrollTop = document.body.scrollHeight;
+  }
+
 }

@@ -4,7 +4,7 @@
         <img src="assets/flight-booking-illustration.svg"  class="flight-booking-img" alt="flight-booking">
     </div>
     <div class="flex-grow-2 travel-form"  [formGroup]="travelForm">
-        <h1>Schedule Your Journey</h1>
+        <h1>Travel Enquiry</h1>
         <div class="d-flex flex-wrap justify-content-between gap-3 p-2">
             <p-floatlabel variant="on">
                 <input pInputText id="first-name" formControlName="firstName" autocomplete="off"
@@ -122,8 +122,8 @@
             </p-floatlabel>
         
             <p-floatlabel variant="on">
-                <input pInputText id="to" formControlName="to" autocomplete="off" 
-                [ngClass]="{'ng-invalid ng-dirty': travelForm.controls['to'].invalid && (travelForm.controls['to'].touched || travelFormSubmitted)}"
+                <input pInputText id="destination" formControlName="destination" autocomplete="off" 
+                [ngClass]="{'ng-invalid ng-dirty': travelForm.controls['destination'].invalid && (travelForm.controls['destination'].touched || travelFormSubmitted)}"
                 />
                 <label for="to">To</label>
             </p-floatlabel>

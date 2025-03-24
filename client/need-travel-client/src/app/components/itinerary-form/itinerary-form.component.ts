@@ -78,7 +78,7 @@ export class ItineraryFormComponent implements OnInit{
       numberOfPassengers: [1, [Validators.required, Validators.min(1)]],
       service: [null, Validators.required],
       from: ['', Validators.required],
-      to: ['', Validators.required],
+      destination: ['', Validators.required],
       departure: ['',Validators.required],
       return: ['',Validators.required],
       remarks: [''],
