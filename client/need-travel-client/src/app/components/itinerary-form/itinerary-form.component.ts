@@ -15,6 +15,7 @@ import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { CommonService } from '../../common-services/common.service';
 import { DatePickerModule } from 'primeng/datepicker';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-itinerary-form',
@@ -62,12 +63,9 @@ export class ItineraryFormComponent implements OnInit{
 
   travelFormSubmitted = false;
 
-  constructor(private fb: FormBuilder,private commonService: CommonService) {
-    this.loadCountryCode()
-    
+  constructor(private fb: FormBuilder,private commonService: CommonService,private messageService: MessageService) {
+    this.loadCountryCode() 
   }
-
-
 
   ngOnInit() {
     this.travelForm = this.fb.group({
@@ -101,17 +99,64 @@ export class ItineraryFormComponent implements OnInit{
   }
 
   onSubmit(){
-    console.log(this.travelForm.controls['firstName'].invalid , this.travelForm.controls['firstName'].touched);
-    console.log(this.travelForm);
+    this.commonService.showLoader()
     this.travelFormSubmitted = true;
   
     if (this.travelForm.invalid) {
       this.travelForm.markAllAsTouched();
+      let errorMessage = this.getFormValidationErrors();
+      this.commonService.hideLoader()
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: errorMessage , life: 3000 });
       return;
     }
+
+    let formData = { ...this.travelForm.value };
+
+    formData.departure = this.formatDate(formData.departure);
+    formData.return = this.formatDate(formData.return);
+    formData.countryCode = formData.countryCode?.value || '';
+    formData.service = formData.service?.label || '';
+
+    this.commonService.submitEnquiryForm(formData).subscribe((response)=>{
+      this.commonService.hideLoader()
+      if(response.data && response.success){
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Form submitted' , life: 3000 });
+      }else{
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Failed to Submit' , life: 3000 });
+      }
+    },(error)=>{
+      this.commonService.hideLoader()
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Failed to Submit' , life: 3000 });
+    })
   
-    console.log("Form Submitted Successfully!");
-    console.log(this.travelForm);
+  }
+
+  formatDate(date: any): string {
+    if (!date) return '';
+    return new Date(date).toISOString().split('T')[0];
+  }
+
+  getFormValidationErrors(): string {
+    for (const key in this.travelForm.controls) {
+      if (this.travelForm.controls[key].invalid) {
+        const controlErrors = this.travelForm.controls[key].errors;
+        if (controlErrors) {
+          if (controlErrors['required']) {
+            return `${key} is required`;
+          }
+          if (controlErrors['email']) {
+            return `Invalid email format`;
+          }
+          if (controlErrors['pattern']) {
+            return `${key} has an invalid format`;
+          }
+          if (controlErrors['min']) {
+            return `${key} should be at least ${this.travelForm.controls[key].errors?.['min'].min}`;
+          }
+        }
+      }
+    }
+    return 'Please fill all required fields correctly.';
   }
 
 }

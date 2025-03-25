@@ -8,6 +8,7 @@ import Aura from '@primeng/themes/aura';
 import {MyPreset} from './preset';
 import { provideHttpClient } from '@angular/common/http';
 import { NgxSpinnerModule  } from 'ngx-spinner';
+import { MessageService } from 'primeng/api';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -21,7 +22,7 @@ export const appConfig: ApplicationConfig = {
             theme: {
                 preset: MyPreset
             }
-        })
-    
+        }),
+        MessageService,
     ]
 };

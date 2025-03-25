@@ -4,11 +4,11 @@ import { ButtonModule } from 'primeng/button';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CommonModule } from '@angular/common';
 import { NgxSpinnerComponent } from 'ngx-spinner';
-
+import { Toast } from 'primeng/toast';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,ButtonModule,NavbarComponent,CommonModule,NgxSpinnerComponent],
+  imports: [RouterOutlet,ButtonModule,NavbarComponent,CommonModule,NgxSpinnerComponent,Toast],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

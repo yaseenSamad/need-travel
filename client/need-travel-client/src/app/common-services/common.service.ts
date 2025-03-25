@@ -1,12 +1,15 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { environment } from '../../environments/environment';
+import { catchError, map, Observable, pipe, tap, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommonService {
 
-  constructor(private spinner: NgxSpinnerService) { }
+  constructor(private spinner: NgxSpinnerService, private http: HttpClient) { }
 
   carouselItems = [
     { id: 1, image: 'assets/windmill-on-famland.jpg', name: 'windmill-on-famland' },
@@ -31,6 +34,28 @@ export class CommonService {
     console.error('Error fetching country codes:', error)
     return []
   });
+  }
+
+  submitEnquiryForm(body: any): Observable<any>{
+    const baseUrl = environment.baseUrl;
+    const apiUrl = `${baseUrl}/api/travel-enquiry-request`
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'authtoken' : 'aa8b3416-6b2b-4f4e-9171-94e5d1d86083'
+      })
+    };
+    
+    return this.http.post(apiUrl,body,httpOptions).pipe(
+      tap(response => console.log(response)),
+      catchError((error) => this.handleError(error))
+    );
+  }
+
+  private handleError(error: any) {
+    console.error('API Error:', error);
+    return throwError(() => new Error('Something went wrong. Please try again.'));
   }
 
   showLoader(){
