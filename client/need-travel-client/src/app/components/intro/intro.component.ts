@@ -1,13 +1,15 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-intro',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './intro.component.html',
   styleUrl: './intro.component.scss'
 })
 export class IntroComponent implements OnInit {
   @Input() fullText: string = 'Welcome to Need Travel!';
+  @Input() displaySearchStyle: boolean = false;
   displayedText: string = '';
   typingSpeed: number = 300;
   deletingSpeed: number = 50;

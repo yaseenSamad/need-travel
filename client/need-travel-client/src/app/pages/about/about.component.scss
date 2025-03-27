@@ -1,0 +1,43 @@
+.about-first-block{
+    width: 100%;
+    margin-block: 2rem;
+    padding-top: 5rem;
+    background: rgb(227,228,18);
+    background: linear-gradient(90deg, rgba(227,228,18,1) 0%, rgba(228,230,15,0.9220938375350141) 35%, rgba(244,237,8,1) 100%);
+}
+.about-first-content{
+    font-size: 10rem;
+    margin-left: 4rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    color: #3b3636;
+    line-height: 0.9;
+}
+
+.about-detail-block{
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    max-height: 500px;
+    align-items: center;
+    margin: 4em 5em 4em 5em;
+}
+
+.about-detail-block div{
+    text-align: left;  
+}
+
+.about-detail-block p{
+    font-size: 2rem;
+}
+
+.about-detail-block h2{
+   font-size: 3rem;
+}
+
+.air-baloon-img{
+    // opacity: 0.8;
+    height: 300px;
+    width: 400px;
+    border-radius: 20px;
+}
