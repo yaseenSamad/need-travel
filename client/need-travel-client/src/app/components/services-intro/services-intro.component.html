@@ -1,7 +1,7 @@
 
 <div class="services-parent-container">
     <div class="px-2 py-3 subheader">
-        <h2>Our Services</h2>
+        <h2 *ngIf="serviceHeader">{{serviceHeader}}</h2>
     </div>
     <div class="services-container">
         <div *ngFor="let service of services" class="service-card">
