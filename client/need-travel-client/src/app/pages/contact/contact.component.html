@@ -1,3 +1,57 @@
 <app-intro [fullText]="'Contact Us'"></app-intro>
 
+<div class="contact-first-block">
+    <div class="contact-first-content">Contact Need</div>
+</div>
+
+<app-itinerary-form></app-itinerary-form>
+
+<div class="contact-details-block">
+    <div>
+        <div style="display: inline-flex;font-weight: 500;">
+            <span style="font-size: 1.5rem;gap: 5px;" class="material-icons">call</span>
+            Call Us
+        </div>
+        <div> <a href="callto:971505954429">+97150 595 4429</a></div>
+        <div><a href="callto:971544965866">+97154 496 5866</a></div>
+    </div>
+
+    <div>
+        <div style="display: inline-flex;gap: 5px;font-weight: 500;">
+            <span style="font-size: 1.5rem;" class="material-icons">mail</span>
+            Email Us
+        </div>
+        <div><a href="mailto: info@needtravel.ae">info&#64;needtravel.ae</a></div>
+    </div>
+
+    <!-- <div>
+        <div style="display: inline-flex;gap: 5px;">
+            <span style="font-size: 1.5rem;" class="material-icons">cloud</span>
+            Text Us
+        </div>
+
+    </div> -->
+
+    <div>
+        <div style="display: inline-flex;gap: 5px;font-weight: 500;">
+            <span style="font-size: 1.5rem;" class="material-icons">cloud</span>
+            Connect Us
+        </div>
+        <div style="display: flex;gap: 10px;">
+            <button (click)="navigateToSocialMediaPlatfor('instagram')" class="icon-wrapper">
+                <img src="assets/instagram.svg" alt="Instagram">
+            </button>
+        
+        
+            <button (click)="navigateToSocialMediaPlatfor('facebook')" class="icon-wrapper">
+                <img src="assets/facebook.svg" alt="facebook">
+            </button>
+
+            <button (click)="navigateToSocialMediaPlatfor('whatsapp')" class="icon-wrapper">
+                <img src="assets/whatsapp.svg" alt="facebook">
+            </button>
+        </div>
+    </div>
+</div>
+
 <app-footer></app-footer>
