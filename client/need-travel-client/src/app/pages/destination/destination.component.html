@@ -1,7 +1,7 @@
 
-<app-intro [fullText]="'Our Destinations'"></app-intro>
+<app-intro [fullText]="'Our Packages'"></app-intro>
 
-<div class="destination-conatiner">
+<!-- <div class="destination-conatiner">
     <div class="destination-section">
         <div class="destination-section-title">Title</div>
         <div class="destination-section-content">
@@ -9,7 +9,39 @@
         </div>
         
     </div>
+</div> -->
+
+<div class="services-first-block">
+    <div class="services-first-content">Need Packages</div>
 </div>
+
+<div class="accordion" id="accordianDestination">
+    <div class="accordion-item" *ngFor="let item of items; let i = index">
+      <div class="accordion-header" [id]="item.id">
+        <button
+          class="accordion-button"
+          [class.collapsed]="!item.expanded"
+          (click)="toggleItem(i)"
+          [attr.aria-expanded]="item.expanded"
+          [attr.aria-controls]="item.id"
+        >
+          {{ item.title }}
+        </button>
+    </div>
+      <div
+        [id]="item.id"
+        class="accordion-collapse"
+        [class.show]="item.expanded"
+        [attr.aria-labelledby]="item.id"
+        data-bs-parent="#accordianDestination"
+      >
+        <div class="accordion-body">
+          <strong>{{ item.content }}</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+  
 
 
 

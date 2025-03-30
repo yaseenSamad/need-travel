@@ -1,7 +1,7 @@
 <div class="destination-list-container">
 
     <div class="px-2 py-3 subheader">
-        <h2>Our Destinations</h2>
+        <h2>Our Packages</h2>
     </div>
 
     <!-- <div *ngFor="let destination of destionationList; trackBy: trackByDestinationId"></div> -->
@@ -18,7 +18,7 @@
                 </p>
                 <ng-template #footer>
                     <div class="d-flex justify-content-center mt-1">
-                        <p-button label="Read more" class="w-full" styleClass="w-full" />
+                        <p-button label="Read more" (onClick)="navigateToDestination()" class="w-full" styleClass="w-full" />
                     </div>
                 </ng-template>
             </p-card>

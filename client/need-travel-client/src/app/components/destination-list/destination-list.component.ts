@@ -3,6 +3,7 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { CommonModule } from '@angular/common';
 import { CarouselModule } from 'primeng/carousel';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-destination-list',
@@ -72,10 +73,16 @@ export class DestinationListComponent {
     }
   ];
 
-  constructor(){}
+  constructor(private router: Router ){}
 
   trackByDestinationId(index: number, destination: any): number {
     return destination.id;
+  }
+
+  navigateToDestination(){
+    console.log(this.router);
+    // this.router.navigate(['/destination'])
+    this.router.navigate(['/packages'],{ fragment: 'aa' });
   }
 
 }

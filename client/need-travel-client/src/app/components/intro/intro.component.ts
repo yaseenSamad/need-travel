@@ -11,10 +11,10 @@ export class IntroComponent implements OnInit {
   @Input() fullText: string = 'Welcome to Need Travel!';
   @Input() displaySearchStyle: boolean = false;
   displayedText: string = '';
-  typingSpeed: number = 300;
-  deletingSpeed: number = 50;
-  delayBeforeDeleting: number = 1000;
-  delayBeforeTyping: number = 100;
+  typingSpeed: number = 100;
+  deletingSpeed: number = 500;
+  delayBeforeDeleting: number = 500;
+  delayBeforeTyping: number = 50;
 
   ngOnInit(): void {
       this.startTypingEffect()

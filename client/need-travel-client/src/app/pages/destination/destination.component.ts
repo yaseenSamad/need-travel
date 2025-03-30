@@ -10,11 +10,36 @@ import { CommonModule } from '@angular/common';
   styleUrl: './destination.component.scss'
 })
 export class DestinationComponent {
-  // var my_element = document.getElementById("my_element");
+  items = [
+    {
+      id: 'collapseOne',
+      // headerId: 'headingOne',
+      title: 'Accordion Item #1',
+      content:
+        'This is the first item\'s accordion body. It is shown by default...',
+      expanded: true,
+    },
+    {
+      id: 'collapseTwo',
+      // headerId: 'headingTwo',
+      title: 'Accordion Item #2',
+      content:
+        'This is the second item\'s accordion body. It is hidden by default...',
+      expanded: true,
+    },
+    {
+      id: 'collapseThree',
+      // headerId: 'headingThree',
+      title: 'Accordion Item #3',
+      content:
+        'This is the third item\'s accordion body. It is hidden by default...',
+      expanded: true,
+    },
+  ];
 
-  // my_element.scrollIntoView({
-  //   behavior: "smooth",
-  //   block: "start",
-  //   inline: "nearest"
-  // });
+  toggleItem(index: number) {
+    this.items.forEach((item, i) => {
+      item.expanded = i === index ? !item.expanded : item.expanded;
+    });
+  }
 }
