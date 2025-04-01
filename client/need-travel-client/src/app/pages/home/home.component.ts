@@ -18,10 +18,10 @@ export class HomeComponent{
   constructor(private commonService: CommonService){
     this.carouselItems = commonService.carouselItems;
 
-    this.commonService.showLoader()
-    setTimeout(() => {
-      this.commonService.hideLoader()
-    }, 3000);
+    // this.commonService.showLoader()
+    // setTimeout(() => {
+    //   this.commonService.hideLoader()
+    // }, 1000);
   }
 
   responsiveOptions = [

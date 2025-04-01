@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet,RouterModule } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -13,8 +13,9 @@ import { Toast } from 'primeng/toast';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit,AfterViewInit{
   title = 'need-travel-client';
+  dockDisplay: boolean = false
 
   constructor(private router: Router){}
 
@@ -38,6 +39,13 @@ export class AppComponent implements OnInit{
       }
     });
   }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.dockDisplay = true
+    }, 2000);
+  }
+  
   
 
   scrollToTop(){

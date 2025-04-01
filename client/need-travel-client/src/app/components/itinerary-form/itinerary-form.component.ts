@@ -43,16 +43,7 @@ export class ItineraryFormComponent implements OnInit{
 
   travelForm!: FormGroup;
 
-  services = [
-    { label: 'Air Tickets', value: 'air-tickets' },
-    { label: 'Hotel', value: 'hotel' },
-    { label: 'Airport Transfer', value: 'airport-transfer' },
-    { label: 'VISA', value: 'visa' },
-    { label: 'Meet and Greet', value: 'meet-greet' },
-    { label: 'Train Tickets', value: 'train-tickets' },
-    { label: 'Entry Tickets', value: 'entry-tickets' },
-    { label: 'Packages', value: 'packages' }
-  ];
+  services: any[] = [];
 
   countryCodes = [
     {countryCode: 'AE', value: '+971', flag: 'https://flagcdn.com/w320/ae.png'}
@@ -64,6 +55,7 @@ export class ItineraryFormComponent implements OnInit{
   travelFormSubmitted = false;
 
   constructor(private fb: FormBuilder,private commonService: CommonService,private messageService: MessageService) {
+    this.services = this.commonService.servicesList
     this.loadCountryCode() 
   }
 

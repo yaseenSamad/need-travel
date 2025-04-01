@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IntroComponent } from '../../components/intro/intro.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { CommonModule } from '@angular/common';
+import { CommonService } from '../../common-services/common.service';
 
 @Component({
   selector: 'app-destination',
@@ -9,33 +10,14 @@ import { CommonModule } from '@angular/common';
   templateUrl: './destination.component.html',
   styleUrl: './destination.component.scss'
 })
-export class DestinationComponent {
-  items = [
-    {
-      id: 'collapseOne',
-      // headerId: 'headingOne',
-      title: 'Accordion Item #1',
-      content:
-        'This is the first item\'s accordion body. It is shown by default...',
-      expanded: true,
-    },
-    {
-      id: 'collapseTwo',
-      // headerId: 'headingTwo',
-      title: 'Accordion Item #2',
-      content:
-        'This is the second item\'s accordion body. It is hidden by default...',
-      expanded: true,
-    },
-    {
-      id: 'collapseThree',
-      // headerId: 'headingThree',
-      title: 'Accordion Item #3',
-      content:
-        'This is the third item\'s accordion body. It is hidden by default...',
-      expanded: true,
-    },
-  ];
+export class DestinationComponent implements OnInit {
+  items: any[] = [];
+
+  constructor(private commonService: CommonService){}
+
+  ngOnInit(): void {
+      this.items = this.commonService.packagesList.map(item => ({...item,expanded: true}))
+  }
 
   toggleItem(index: number) {
     this.items.forEach((item, i) => {

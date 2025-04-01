@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CommonService } from '../../common-services/common.service';
 
 @Component({
   selector: 'app-services-intro',
@@ -11,16 +12,11 @@ export class ServicesIntroComponent {
 
   @Input()
   serviceHeader: string = ''
-  services = [
-    { label: 'Air Tickets', icon: 'airplane_ticket' },
-    { label: 'Hotel', icon: 'hotel' },
-    { label: 'Airport Transfer', icon: 'local_shipping' },
-    { label: 'VISA', icon: 'credit_card' },
-    { label: 'Meet and Greet', icon: 'handshake' },
-    { label: 'Train Tickets', icon: 'train' },
-    { label: 'Entry Tickets', icon: 'local_activity' },
-    { label: 'Packages', icon: 'luggage' }
-];
+  services: any[] = [];
+
+  constructor(private commonService: CommonService){
+    this.services  = this.commonService.servicesList
+  }
 }
 
 // <!-- train -->
